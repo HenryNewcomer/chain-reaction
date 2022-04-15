@@ -1,3 +1,3 @@
 extends Node
 
-signal prion_clicked
+signal prion_clicked(id)

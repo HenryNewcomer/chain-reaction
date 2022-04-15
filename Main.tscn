@@ -7,8 +7,8 @@
 script = ExtResource( 2 )
 
 [node name="Prion" parent="." instance=ExtResource( 1 )]
-margin_left = 902.0
-margin_top = 474.0
-margin_right = 1006.0
-margin_bottom = 586.0
+margin_left = -133.0
+margin_top = 14.0
+margin_right = -29.0
+margin_bottom = 126.0
 flat = true

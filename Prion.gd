@@ -2,6 +2,7 @@ extends Button
 
 const FACE_LEFT = -1
 const FACE_RIGHT = 1
+var array_id
 var is_on = 1 # on (1) = /    off (0) = \
 var width
 var facing
@@ -13,7 +14,7 @@ func _ready():
 	connect("pressed", self, "_on_pressed")
 
 func _on_pressed():
-	Signals.emit_signal("prion_clicked")
+	Signals.emit_signal("prion_clicked", array_id)
 	print("prion_clicked *pressed*")
 	flip_direction()
 	"""
@@ -26,3 +27,4 @@ func flip_direction():
 	var plus_or_minus = (-1 if is_on else 1)
 	rect_scale.x *= -1
 	rect_position.x += (width * plus_or_minus)
+	print("flip!")

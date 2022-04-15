@@ -6,8 +6,9 @@ var current_grid = []
 func _ready():
 	Signals.connect("prion_clicked", self, "capture_current_grid_state")
 	reset_grid()
-	current_grid[2] = 0
 	draw_grid()
+
+# FIXME current_grid is twice as long as it should be
 
 func reset_grid():
 	var converted_grid_size = grid_size.x * grid_size.y
@@ -22,17 +23,15 @@ func draw_grid():
 	var height = $Prion.rect_size.y
 	var i = 0
 	
-	for c in columns:
-		for r in rows:
-			i += 1
+	for r in rows:
+		for c in columns:
 			var new_inst = $Prion.duplicate()
+			new_inst.array_id = i
 			add_child(new_inst)
 			new_inst.rect_position = Vector2(c*width, r*height)
-			print("%s) %s, %s" % [i, c, r])
-			current_grid.push_back(1)
-	print(current_grid)
+			i += 1
 
-func capture_current_grid_state():
+func capture_current_grid_state(id): # TODO fix id. how does prion element know its own array ID?
 	print("[ CAPTURING STATE! ]")
+	current_grid[id] = int(!current_grid[id])
 	print(current_grid)
-	pass
