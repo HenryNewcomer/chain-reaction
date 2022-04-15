@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Prion.gd" type="Script" id=1]
+
+[node name="Prion" type="Button"]
+margin_right = 104.0
+margin_bottom = 112.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.65098, 0.803922, 0.941176, 1 )
+margin_left = 32.0
+margin_right = 70.0
+margin_bottom = 112.0
+rect_rotation = 44.9999
+rect_scale = Vector2( 0.547454, 0.547454 )
+rect_pivot_offset = Vector2( 19, 56 )
+mouse_filter = 2
